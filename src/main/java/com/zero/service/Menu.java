@@ -37,14 +37,15 @@ public class Menu {
 		int pin;
 		boolean availability = true;
 		boolean validation = false;
-		response = scanner.nextLine();
-		
+		response = scanner.next();
+		//reads in if the user has an account or not
 		if (response.equalsIgnoreCase("y")) {
 			outerUser: do {
 				System.out.println("Please create your username");
 				username = scanner.next();
 				if(checkUsernameLength(username) == false)
 				{
+					//goes back to the first while loop
 					continue outerUser;
 				}
 				if (userDao.checkUsernameAvailability(username) == true)
@@ -142,9 +143,9 @@ public class Menu {
 			do
 			{
 			System.out.println("Please enter your username");
-			username = scanner.nextLine();
+			username = scanner.next();
 			System.out.println("Please enter your password");
-			password = scanner.nextLine();
+			password = scanner.next();
 			if (userDao.authenticate(username, password)== true)
 			{
 				newUser =  userDao.getUser(username);

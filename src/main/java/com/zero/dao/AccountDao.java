@@ -167,7 +167,7 @@ public class AccountDao {
 				statement2.setInt(2, id);
 				
 				statement2.executeUpdate();
-				System.out.println(amount + "$ has been deposited into account number: " + id);
+				System.out.println("$" + amount + " has been deposited into account number: " + id);
 				connection.commit();
 			}
 			else
@@ -417,7 +417,7 @@ public class AccountDao {
 							
 				}
 				connection.commit();
-				System.out.println("Account: " + accountId + " was removed from the database");
+				System.out.println("Account: " + accountId + " has now been closed.");
 			}
 			else
 			{
